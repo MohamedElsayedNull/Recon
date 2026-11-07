@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ReconFlow — Project Presentation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <b>&gt;_ ReconFlow</b>
+    <div class="l" id="nav">
+      <a href="#intro">Introduction</a>
+      <a href="#overview">Overview</a>
+      <a href="#osint">OSINT</a>
+      <a href="#active">Active Recon</a>
+      <a href="#crawl">Crawling</a>
+      <a href="#agent">AI Agent</a>
+      <a href="#js">JS Analysis</a>
+      <a href="#dash">Dashboard</a>
+      <a href="#test">Vulnerability Testing</a>
+      <a href="#reports">Reports</a>
+      <a href="#end">Conclusion</a>
+    </div>
+  </nav>
+
+  <main id="m">
+
+<section class="hero" id="home">
+  <div class="w">
+    <div class="tag">Reconnaissance &amp; Vulnerability Assessment</div><h1>Recon<span>Flow</span></h1>
+    <div class="ed " contenteditable spellcheck="false">A unified workflow for authorized asset discovery, analysis, and reporting</div>
+    <div class="term">&gt; target → recon → analysis → report</div><a class="btn" href="#intro">Start presentation</a>
+  </div>
+</section>
+
+<!-- ===== Introduction ===== -->
+<section id="intro">
+  <div class="w">
+    <div class="tag">Page 1 / 11</div>
+    <h2>What is Reconnaissance?</h2>
+
+    <div class="g g2">
+      <div>
+        <div class="card">
+          <h3>Explanation</h3>
+          <div class="ed big" contenteditable spellcheck="false">Reconnaissance is the structured process of identifying and understanding an organization's digital footprint before a security assessment. It helps teams define scope, collect relevant information, and prioritize what needs closer review. All activity should be explicitly authorized and remain within the agreed scope.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Legend</h3><span class="chip c1">Filtering &amp; deduplication only</span><br><span class="chip c2">Additional technical analysis</span><br><span class="chip c3">User-initiated step</span>
+        <div class="ed " contenteditable spellcheck="false">The workflow distinguishes automated organization from additional analysis and user-approved testing.</div>
+      </div>
+    </div>
+
+    <div class="card mt">
+      <h3>ReconFlow workflow</h3>
+      <div class="vf stage" style="margin:auto">
+
+        <div class="node hi">
+          <div class="ed" contenteditable>Target</div>
+        </div>
+        <div class="ar">→</div>
+
+        <div class="g g3" style="width:100%">
+          <div class="node">
+            <div class="tag">Stage 1</div>
+            <div class="ed" contenteditable>OSINT</div>
+          </div>
+          <div class="node">
+            <div class="tag">Stage 2</div>
+            <div class="ed" contenteditable>Active Recon</div>
+          </div>
+          <div class="node">
+            <div class="tag">Stage 3</div>
+            <div class="ed" contenteditable>Web Crawling</div>
+          </div>
+        </div>
+        <div class="ar">→</div>
+
+        <div class="node hi">
+          <div class="ed" contenteditable>AI Agent</div>
+        </div>
+        <div class="ar">→</div>
+
+        <div class="node">
+          <div class="ed" contenteditable>Filtering &amp; Deduplication</div><span class="chip c1">all three stages</span>
+        </div>
+        <div class="ar">→</div>
+
+        <div class="node gr">
+          <div class="ed" contenteditable>JavaScript &amp; HTML Analysis</div><span class="chip c2">risk patterns · endpoints · parameters · line numbers</span>
+        </div>
+        <div class="ar">→</div>
+
+        <div class="node">
+          <div class="ed" contenteditable>Recon Dashboard &amp; PDF Reports</div>
+        </div>
+        <div class="ar">→</div>
+
+        <div class="node am">
+          <div class="ed" contenteditable>User-Selected Vulnerability Testing</div><span class="chip c3">started by the user</span>
+        </div>
+        <div class="ar">→</div>
+
+        <div class="node">
+          <div class="ed" contenteditable>Vulnerability Reports</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Overview ===== -->
+<section id="overview">
+  <div class="w">
+    <div class="tag">Page 2 / 11</div>
+    <h2>Project Overview</h2>
+
+    <div class="g">
+      <div class="card" style="border-color:var(--line);border-top:3px solid var(--am)">
+        <h3 style="color:var(--am)">Problem 01 — Too Many Reconnaissance Tools</h3>
+        <div class="g g2">
+          <div class="card" style="background:var(--bg2);border-color:rgba(180,83,9,.35)">
+            <h3 style="color:var(--am)">The Problem</h3>
+            <div class="ed big" contenteditable spellcheck="false">
+              <p>Reconnaissance requires multiple specialized tools, each handling a different task. Pentesters must switch between tools, manage them separately, and remember what is needed at each stage.</p>
+              <p style="margin-bottom:0">This fragmented workflow can mean missed tools, overlooked information, and unnecessary manual effort.</p>
+            </div>
+          </div>
+          <div class="card" style="background:rgba(21,128,61,.04);border-color:rgba(21,128,61,.35)">
+            <h3 style="color:var(--gr)">Our Solution — Unified Reconnaissance Workflow</h3>
+            <div class="ed big" contenteditable spellcheck="false">
+              <p>ReconFlow brings three reconnaissance stages together in one centralized workflow:</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px">
+                <div class="fb" style="border-color:rgba(21,128,61,.3)">OSINT</div>
+                <div class="fb" style="border-color:rgba(21,128,61,.3)">Active Recon</div>
+                <div class="fb" style="border-color:rgba(21,128,61,.3)">Web Crawling</div>
+              </div>
+              <p style="margin-bottom:0">Manage the process in one place instead of constantly switching between separate tools and workflows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:var(--line);border-top:3px solid var(--cy)">
+        <h3 style="color:var(--cy)">Problem 02 — Unorganized and Duplicated Tool Outputs</h3>
+        <div class="g g2">
+          <div class="card" style="background:var(--bg2);border-color:rgba(180,83,9,.35)">
+            <h3 style="color:var(--am)">The Problem</h3>
+            <div class="ed big" contenteditable spellcheck="false">
+              <p>Each reconnaissance tool produces results in its own format and structure. Across multiple tools, duplicated information can make collected data difficult to read, understand, compare, and organize.</p>
+              <p style="margin-bottom:0">The result is more effort spent sorting outputs before they can be reviewed.</p>
+            </div>
+          </div>
+          <div class="card" style="background:rgba(8,127,190,.04);border-color:rgba(8,127,190,.35)">
+            <h3 style="color:var(--cy)">Our Solution — AI-Powered Filtering &amp; Analysis</h3>
+            <div class="ed big" contenteditable spellcheck="false">
+              <p>The AI Agent filters irrelevant or low-value results, removes duplicated records, and organizes information into independent stage-based output files:</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px">
+                <div class="fb"><span class="chip c1">01</span><br><strong>OSINT Results</strong></div>
+                <div class="fb"><span class="chip c1">02</span><br><strong>Active Recon Results</strong></div>
+                <div class="fb" style="border-color:var(--tl)"><span class="chip c2">03</span><br><strong>Crawling Results</strong></div>
+              </div>
+              <div style="margin-top:14px;padding:12px;border:1px solid rgba(15,118,110,.35);border-radius:10px;background:rgba(15,118,110,.05)">
+                <strong style="color:var(--tl)">Additional analysis for Crawling Results</strong>
+                <p style="margin:6px 0">Relevant JavaScript and HTML collected during web reconnaissance and crawling can be analyzed to organize discovered endpoints, associated parameters, potentially risky code patterns, source file paths, and line numbers when reliably available.</p>
+                <p style="margin:0">Risk indicators are ranked from highest to lowest review priority—not presented as confirmed vulnerabilities or proof of exploitability. Network and OSINT results receive filtering and deduplication only, not deep security analysis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt">
+      <h3>Problem → Solution mapping</h3>
+      <div class="flow">
+        <div class="fb">
+          <div class="ed" contenteditable>Multiple reconnaissance tools require constant switching.</div>
+        </div><span class="ar">→</span>
+        <div class="fb">
+          <div class="ed" contenteditable>One unified reconnaissance workflow.</div>
+        </div>
+      </div><br>
+      <div class="flow">
+        <div class="fb">
+          <div class="ed" contenteditable style="width:100%">
+            <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px">
+              <div>Multiple outputs contain duplicated and unorganized information.</div>
+              <span class="ar">→</span>
+              <div>AI-powered filtering, deduplication, and stage-based output organization, with additional JavaScript and HTML analysis for crawling results.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt" style="border-color:rgba(21,128,61,.35);background:rgba(21,128,61,.04)">
+      <div class="ed" contenteditable style="text-align:center">
+        <strong style="color:var(--gr);font-size:18px">Free to Use</strong>
+        <div>ReconFlow will be available for free, making its reconnaissance and analysis capabilities accessible to everyone without requiring a paid subscription.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OSINT ===== -->
+<section id="osint">
+  <div class="w">
+    <div class="tag">Page 3 / 11</div>
+    <h2>OSINT</h2>
+
+    <div class="g g2">
+      <div class="card">
+        <h3>Explanation</h3>
+        <div class="ed big" contenteditable spellcheck="false">Open-source intelligence (OSINT) uses publicly available information to build an initial picture of an in-scope organization. ReconFlow organizes relevant sources and records their context so analysts can review, verify, and document the results.</div>
+      </div>
+      <div class="card">
+        <h3>Workflow diagram</h3>
+        <div class="flow">
+          <div class="fb">
+            <div class="ed" contenteditable>Define the authorized scope</div>
+          </div><span class="ar">→</span>
+          <div class="fb">
+            <div class="ed" contenteditable>Review public sources</div>
+          </div><span class="ar">→</span>
+          <div class="fb">
+            <div class="ed" contenteditable>Validate relevant records</div>
+          </div><span class="ar">→</span>
+          <div class="fb">
+            <div class="ed" contenteditable>Document findings and sources</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="osint-tools mt">
+      <style>
+        .osint-tools h3.osint-tools-title{margin-bottom:14px;color:var(--cy)}
+        .osint-tools .osint-source-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+        .osint-tools .osint-source-card{display:flex;flex-direction:column;min-width:0;padding:16px;background:#0b1220;border:1px solid #263449;border-radius:14px;color:#e2e8f0;box-shadow:0 6px 20px rgba(2,8,23,.16);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+        .osint-tools .osint-source-card:hover{transform:translateY(-3px);border-color:#0891b2;box-shadow:0 10px 24px rgba(8,145,178,.18)}
+        .osint-tools .osint-source-card h3{margin:0 0 8px;color:#67e8f9;font-size:13px}
+        .osint-tools .osint-source-card .osint-source-description{flex:1;margin:0 0 12px;color:#cbd5e1;font-size:14px}
+        .osint-tools .osint-source-trigger{display:block;width:100%;margin:0;padding:8px;cursor:zoom-in;background:#111b2b;border:1px solid #334155;border-radius:10px}
+        .osint-tools .osint-source-trigger img{display:block;width:100%;height:190px;object-fit:contain}
+        .osint-tools .osint-source-caption{margin-top:8px;color:#94a3b8;font-size:12px}
+        .osint-tools .osint-lightbox{width:min(92vw,1100px);max-width:92vw;max-height:92vh;padding:14px;background:#0b1220;color:#e2e8f0;border:1px solid #334155;border-radius:12px}
+        .osint-tools .osint-lightbox::backdrop{background:rgba(2,8,23,.82)}
+        .osint-tools .osint-lightbox-close{display:block;margin:0 0 10px auto;padding:7px 12px;color:#e2e8f0;background:#172337;border:1px solid #475569;border-radius:7px;cursor:pointer}
+        .osint-tools .osint-lightbox img{display:block;width:100%;height:min(78vh,760px);object-fit:contain}
+        @media(max-width:900px){.osint-tools .osint-source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:540px){.osint-tools .osint-source-grid{grid-template-columns:1fr}}
+        @media(prefers-reduced-motion:reduce){.osint-tools .osint-source-card{transition:none}}
+      </style>
+      <h3 class="osint-tools-title">OSINT Tools &amp; Source Interfaces</h3>
+      <div class="osint-source-grid">
+        <article class="osint-source-card">
+          <h3 class="ed" contenteditable spellcheck="false">Certificate Transparency (crt.sh)</h3>
+          <p class="osint-source-description ed" contenteditable spellcheck="false">Certificate Transparency logs provide publicly accessible information about issued SSL/TLS certificates. They can help identify domain names and subdomains associated with an organization.</p>
+          <button class="osint-source-trigger" type="button" aria-label="Open Certificate Transparency image in lightbox" onclick="const d=this.closest('.osint-tools').querySelector('.osint-lightbox');const i=this.querySelector('img');d.querySelector('img').src=i.src;d.querySelector('img').alt=i.alt;d.showModal()">
+            <img src="image/crt.png" alt="Certificate Transparency source interface" loading="lazy">
+          </button>
+          <div class="osint-source-caption ed" contenteditable spellcheck="false">Certificate Transparency source interface</div>
+        </article>
+        <article class="osint-source-card">
+          <h3 class="ed" contenteditable spellcheck="false">GitHub Public Repositories</h3>
+          <p class="osint-source-description ed" contenteditable spellcheck="false">Public GitHub repositories can provide useful technical context about an organization's publicly available projects, source code, and technologies.</p>
+          <button class="osint-source-trigger" type="button" aria-label="Open GitHub image in lightbox" onclick="const d=this.closest('.osint-tools').querySelector('.osint-lightbox');const i=this.querySelector('img');d.querySelector('img').src=i.src;d.querySelector('img').alt=i.alt;d.showModal()">
+            <img src="image/githup.png" alt="GitHub public repositories source interface" loading="lazy">
+          </button>
+          <div class="osint-source-caption ed" contenteditable spellcheck="false">Public repository interface</div>
+        </article>
+        <article class="osint-source-card">
+          <h3 class="ed" contenteditable spellcheck="false">LinkedIn Professional Profiles</h3>
+          <p class="osint-source-description ed" contenteditable spellcheck="false">Public professional profiles can help identify job titles, departments, professional roles, and publicly disclosed organizational information.</p>
+          <button class="osint-source-trigger" type="button" aria-label="Open LinkedIn image in lightbox" onclick="const d=this.closest('.osint-tools').querySelector('.osint-lightbox');const i=this.querySelector('img');d.querySelector('img').src=i.src;d.querySelector('img').alt=i.alt;d.showModal()">
+            <img src="image/linkedin.png" alt="LinkedIn professional profiles source interface" loading="lazy">
+          </button>
+          <div class="osint-source-caption ed" contenteditable spellcheck="false">Professional profile interface</div>
+        </article>
+        <article class="osint-source-card">
+          <h3 class="ed" contenteditable spellcheck="false">Web Archives (Wayback Machine)</h3>
+          <p class="osint-source-description ed" contenteditable spellcheck="false">Public web archives allow analysts to review historical versions of websites and understand how publicly accessible pages and website structures have changed over time.</p>
+          <button class="osint-source-trigger" type="button" aria-label="Open Web Archives image in lightbox" onclick="const d=this.closest('.osint-tools').querySelector('.osint-lightbox');const i=this.querySelector('img');d.querySelector('img').src=i.src;d.querySelector('img').alt=i.alt;d.showModal()">
+            <img src="image/Web Archives.png" alt="Web Archives source interface" loading="lazy">
+          </button>
+          <div class="osint-source-caption ed" contenteditable spellcheck="false">Historical website archive interface</div>
+        </article>
+      </div>
+      <dialog class="osint-lightbox" aria-label="OSINT source image preview">
+        <button class="osint-lightbox-close" type="button" onclick="this.closest('dialog').close()">Close</button>
+        <img alt="">
+      </dialog>
+    </div>
+    <h3 class="mt">Input &amp; output</h3>
+    <div class="g g3">
+      <div class="card">
+        <h3>Input</h3>
+        <div class="ed " contenteditable spellcheck="false">An approved domain, organization, or other explicitly scoped identifier.</div>
+      </div>
+      <div class="card">
+        <h3>Process</h3>
+        <div class="ed " contenteditable spellcheck="false">Collect public records, validate their relevance, and retain source context.</div>
+      </div>
+      <div class="card">
+        <h3>Output</h3>
+        <div class="ed " contenteditable spellcheck="false">A deduplicated set of relevant observations ready for analyst review.</div>
+      </div>
+    </div>
+
+    <div class="mt">
+      <div class="tag">Advanced OSINT</div>
+      <h3 style="margin-top:8px;font-size:16px;letter-spacing:0;text-transform:none;font-family:inherit">Advanced OSINT — Employee &amp; Organizational Intelligence</h3>
+      <div class="g g3 mt">
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;color:var(--cy)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/><path d="M16 5.2a3 3 0 0 1 0 5.6M18 14a5 5 0 0 1 3 4.6V20"/></svg>
+            <h3 style="margin:0">Professional Information</h3>
+          </div>
+          <div class="advanced-editable" contenteditable spellcheck="false" style="color:var(--mut);outline:none;border-radius:6px">
+            <p>Publicly available professional profiles, such as LinkedIn profiles, can help build an understanding of an organization's structure.</p>
+            <ul>
+              <li>Job titles and professional roles</li>
+              <li>Department identification</li>
+              <li>Organizational structure</li>
+              <li>Publicly disclosed professional information</li>
+            </ul>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin:14px 0 8px;color:var(--tl)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="9" y="15" width="6" height="6" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg>
+            <strong>Organizational Structure</strong>
+          </div>
+          <div class="advanced-editable" contenteditable spellcheck="false" style="color:var(--mut);outline:none;border-radius:6px">Use public professional roles and departments to understand organizational relationships, based only on information people and organizations have made public.</div>
+        </div>
+
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;color:var(--tl)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+            <h3 style="margin:0;color:var(--tl)">Public Contact Information</h3>
+          </div>
+          <div class="advanced-editable" contenteditable spellcheck="false" style="color:var(--mut);outline:none;border-radius:6px">
+            <p>Document official organizational contact channels that are intentionally published for public use:</p>
+            <ul>
+              <li>Public corporate contact information</li>
+              <li>Official company contact pages</li>
+              <li>Public organizational communication channels</li>
+            </ul>
+            <p style="margin-bottom:0">Do not harvest or guess personal email addresses, scrape individual employees' private contact details, or automate their collection.</p>
+          </div>
+        </div>
+
+        <div class="card" style="border-color:rgba(15,118,110,.35);background:rgba(15,118,110,.04)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;color:var(--gr)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <h3 style="margin:0;color:var(--gr)">Security Awareness &amp; Phishing Simulation</h3>
+          </div>
+          <div class="advanced-editable" contenteditable spellcheck="false" style="color:var(--mut);outline:none;border-radius:6px">
+            <p>Public professional information can help an organization understand social-engineering exposure and improve security awareness.</p>
+            <p>Any exercise must be an authorized security-awareness simulation—not an actual phishing attack—and use:</p>
+            <ul>
+              <li>Organization-provided test accounts</li>
+              <li>A controlled, approved assessment scope</li>
+              <li>Safe reporting of simulation outcomes</li>
+              <li>No real password collection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Active Recon ===== -->
+<section id="active">
+  <div class="w">
+    <div class="tag">Page 4 / 11</div>
+    <h2>Active Reconnaissance</h2>
+
+    <div class="g g2">
+      <div class="card">
+        <h3>Explanation</h3>
+        <div class="ed big" contenteditable spellcheck="false">Active reconnaissance involves direct interaction with approved assets to confirm what is reachable and how it responds. ReconFlow separates network and web observations and keeps this stage within the written scope and agreed testing limits.</div>
+      </div>
+      <div class="card">
+        <h3>How active discovery works</h3>
+        <div class="flow">
+          <div class="fb">
+            <div class="ed" contenteditable>Target</div>
+          </div><span class="ar">→</span>
+          <div class="fb">
+            <div class="ed" contenteditable>Active probing</div>
+          </div><span class="ar">→</span>
+          <div class="fb">
+            <div class="ed" contenteditable>Discovered assets</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="g g2 mt">
+      <div class="card" style="border-color:var(--cy)">
+        <div class="tag">Network assessment</div>
+        <h3>Network Reconnaissance</h3>
+        <div class="ed big" contenteditable spellcheck="false">Build an inventory of in-scope network assets and review observed services at a high level. Coordinate timing and intensity with the system owner, and document any exclusions or operational limits.</div>
+        <div class="g g3">
+          <div class="card">
+            <div class="tag">Review area</div>
+            <div class="ed " contenteditable spellcheck="false">Asset reachability</div>
+            <div class="ed " contenteditable spellcheck="false">Summarize which approved assets responded during the assessment window.</div>
+            <div class="ed " contenteditable spellcheck="false">Document scope, timing, and observed response.</div>
+          </div>
+          <div class="card">
+            <div class="tag">Review area</div>
+            <div class="ed " contenteditable spellcheck="false">Service inventory</div>
+            <div class="ed " contenteditable spellcheck="false">Record high-level service observations for assets explicitly included in scope.</div>
+            <div class="ed " contenteditable spellcheck="false">Validate results with the system owner before reporting.</div>
+          </div>
+        </div>
+        <div class="shot">
+          <div>▢ Sample results<br><span class="ed" contenteditable>Sanitized asset-inventory example from an authorized assessment</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:var(--tl)">
+        <div class="tag">Web assessment</div>
+        <h3>Web Reconnaissance</h3>
+        <div class="ed big" contenteditable spellcheck="false">Review approved web properties to map their public pages, routes, and response behavior. Keep collection proportional to the engagement scope and avoid actions that could affect availability or user data.</div>
+        <div class="g g3">
+          <div class="card">
+            <div class="tag">Review area</div>
+            <div class="ed " contenteditable spellcheck="false">Page and route inventory</div>
+            <div class="ed " contenteditable spellcheck="false">Organize the publicly reachable pages and routes within the agreed scope.</div>
+            <div class="ed " contenteditable spellcheck="false">Keep a record of source and collection context.</div>
+          </div>
+          <div class="card">
+            <div class="tag">Review area</div>
+            <div class="ed " contenteditable spellcheck="false">Response metadata</div>
+            <div class="ed " contenteditable spellcheck="false">Summarize relevant response details without collecting unnecessary user data.</div>
+            <div class="ed " contenteditable spellcheck="false">Confirm observations manually before drawing conclusions.</div>
+          </div>
+        </div>
+        <div class="shot">
+          <div>▢ Sample results<br><span class="ed" contenteditable>Sanitized web-inventory example from an authorized assessment</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Crawling ===== -->
+<section id="crawl">
+  <div class="w">
+    <div class="tag">Page 5 / 11</div>
+    <h2>Web Crawling</h2>
+
+    <div class="g g2">
+      <div class="card">
+        <h3>Explanation</h3>
+        <div class="ed big" contenteditable spellcheck="false">A web crawler follows links and records pages and references within an approved boundary. The collected map helps analysts understand site structure and identify areas that may need manual review. Respect rate limits, exclusions, and site-owner instructions.</div>
+      </div>
+      <div class="card">
+        <h3>Crawling workflow</h3>
+        <div class="flow">
+          <div class="fb">
+            <div class="ed" contenteditable>Approved starting page</div>
+          </div><span class="ar">→</span>
+          <div class="fb">
+            <div class="ed" contenteditable>Review page references</div>
+          </div><span class="ar">→</span>
+          <div class="fb">
+            <div class="ed" contenteditable>Record in-scope links</div>
+          </div><span class="ar">→</span>
+          <div class="fb">
+            <div class="ed" contenteditable>Continue within agreed limits</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt">
+      <h3>How a website is explored</h3>
+      <div class="vf">
+        <div class="node hi">
+          <div class="ed" contenteditable>Website</div>
+        </div>
+        <div class="ar">→</div>
+        <div class="g g4" style="width:100%">
+          <div class="node">
+            <div class="ed" contenteditable>Pages</div>
+          </div>
+          <div class="node">
+            <div class="ed" contenteditable>URLs</div>
+          </div>
+          <div class="node">
+            <div class="ed" contenteditable>Forms</div>
+          </div>
+          <div class="node">
+            <div class="ed" contenteditable>Parameters</div>
+          </div>
+          <div class="node">
+            <div class="ed" contenteditable>JavaScript files</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt">Crawling workflow highlights</h3>
+    <div class="g g3">
+      <div class="card">
+        <div class="tag">Capability</div>
+        <div class="ed " contenteditable spellcheck="false">In-scope page discovery</div>
+        <div class="ed " contenteditable spellcheck="false">Build a structured list of pages reachable within the approved site boundary.</div>
+        <div class="ed " contenteditable spellcheck="false">Review exclusions and collection limits first.</div>
+      </div>
+      <div class="card">
+        <div class="tag">Capability</div>
+        <div class="ed " contenteditable spellcheck="false">Link and form inventory</div>
+        <div class="ed " contenteditable spellcheck="false">Summarize discovered links and form locations for analyst review.</div>
+        <div class="ed " contenteditable spellcheck="false">Avoid submitting forms or changing application data.</div>
+      </div>
+      <div class="card">
+        <div class="tag">Capability</div>
+        <div class="ed " contenteditable spellcheck="false">Collection summary</div>
+        <div class="ed " contenteditable spellcheck="false">Present discovered URLs and references with useful context.</div>
+        <div class="ed " contenteditable spellcheck="false">Verify representative results before reporting.</div>
+      </div>
+    </div>
+    <h3 class="mt">Results preview</h3>
+    <div class="shot">
+      <div>▢ Results preview<br><span class="ed" contenteditable>Sanitized page and link inventory from an authorized assessment</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI Agent ===== -->
+<section id="agent">
+  <div class="w">
+    <div class="tag">Page 6 / 11</div>
+    <h2>AI Agent: Filtering &amp; Deduplication</h2>
+
+    <div class="card">
+      <h3>Pipeline</h3>
+      <div class="g" style="grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px">
+
+        <div class="vf">
+          <div class="node" style="padding:8px">
+            <div class="ed" contenteditable>OSINT</div>
+          </div>
+          <div class="node" style="padding:8px">
+            <div class="ed" contenteditable>Active Recon</div>
+          </div>
+          <div class="node" style="padding:8px">
+            <div class="ed" contenteditable>Web Crawling</div>
+          </div>
+        </div><span class="ar" style="display:block">→</span>
+
+        <div class="node hi">
+          <div class="ed" contenteditable>AI Agent</div>
+          <div class="ed" contenteditable>Organizes findings for analyst review; does not replace verification.</div>
+        </div><span class="ar" style="display:block">→</span>
+
+        <div class="vf">
+          <div class="node gr" style="padding:8px">
+            <div class="ed" contenteditable>Organized, normalized output</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="g g4 mt">
+      <div class="card">
+        <h3>Filter duplicated results</h3>
+        <div class="ed " contenteditable spellcheck="false">Compare records using relevant attributes and merge clear duplicates while preserving their original sources.</div>
+      </div>
+      <div class="card">
+        <h3>Remove low-value information</h3>
+        <div class="ed " contenteditable spellcheck="false">Separate actionable observations from incomplete or out-of-scope data for human review.</div>
+      </div>
+      <div class="card">
+        <h3>Organize collected data</h3>
+        <div class="ed " contenteditable spellcheck="false">Group related observations by asset and discovery stage so analysts can navigate results consistently.</div>
+      </div>
+      <div class="card">
+        <h3>Normalize to a consistent structure</h3>
+        <div class="ed " contenteditable spellcheck="false">Use consistent fields and preserve source details, timestamps, and uncertainty.</div>
+      </div>
+    </div>
+
+    <div class="card mt" style="border-color:var(--gr)">
+      <h3 style="color:var(--gr)">Additional step: JavaScript &amp; HTML analysis</h3>
+      <div class="ed big" contenteditable spellcheck="false">Code analysis adds context that simple deduplication cannot provide. It can surface references such as endpoints and parameters for human review, but a pattern is only an indicator—not proof of a vulnerability.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JS Analysis ===== -->
+<section id="js">
+  <div class="w">
+    <div class="tag">Page 7 / 11</div>
+    <h2>JavaScript &amp; HTML Security Analysis</h2>
+
+    <div class="g g3">
+      <div class="card">
+        <h3>JavaScript file analysis</h3>
+        <div class="ed " contenteditable spellcheck="false">Review collected JavaScript files for references that may help map an application's public surface.</div>
+      </div>
+      <div class="card">
+        <h3>HTML analysis</h3>
+        <div class="ed " contenteditable spellcheck="false">Extract page metadata and references that provide context for analyst review.</div>
+      </div>
+      <div class="card">
+        <h3>Sensitive functions &amp; risky code patterns</h3>
+        <div class="ed " contenteditable spellcheck="false">Flag patterns for manual review; their presence alone does not establish a security issue.</div>
+      </div>
+      <div class="card">
+        <h3>Discovered endpoints</h3>
+        <div class="ed " contenteditable spellcheck="false">Record endpoint references found in the reviewed source and link them to their origin.</div>
+      </div>
+      <div class="card">
+        <h3>Associated parameters</h3>
+        <div class="ed " contenteditable spellcheck="false">Associate visible parameter names with the relevant page or source reference when available.</div>
+      </div>
+      <div class="card">
+        <h3>Source file paths</h3>
+        <div class="ed " contenteditable spellcheck="false">Keep the source path so analysts can locate and verify each observation.</div>
+      </div>
+      <div class="card">
+        <h3>Line numbers</h3>
+        <div class="ed " contenteditable spellcheck="false">Include a source line reference when it can be determined reliably.</div>
+      </div>
+      <div class="card">
+        <h3>Risk indicators</h3>
+        <div class="ed " contenteditable spellcheck="false">Describe why an observation may merit review and clearly label its uncertainty.</div>
+      </div>
+      <div class="card">
+        <h3>Risk prioritization</h3>
+        <div class="ed " contenteditable spellcheck="false">Prioritize review using context, scope, and analyst judgment—not pattern matching alone.</div>
+      </div>
+    </div>
+
+    <div class="card mt">
+      <h3>Example: finding → page → source location <span class="chip c3">Illustrative layout only</span></h3>
+
+      <div class="g g2">
+        <div>
+          <div class="row"><b>Webpage</b>
+            <div class="ed " contenteditable spellcheck="false">https://example.com/account</div>
+          </div>
+          <div class="row"><b>Source file</b>
+            <div class="ed " contenteditable spellcheck="false">/assets/app.js</div>
+          </div>
+          <div class="row"><b>Line</b>
+            <div class="ed " contenteditable spellcheck="false">Example: 42</div>
+          </div>
+          <div class="row"><b>Endpoint</b>
+            <div class="ed " contenteditable spellcheck="false">/api/example</div>
+          </div>
+          <div class="row"><b>Parameter</b>
+            <div class="ed " contenteditable spellcheck="false">Example: itemId</div>
+          </div>
+          <div class="row"><b>Indicator</b><span><span class="chip c3">Potential risk indicator</span></span></div>
+        </div>
+
+        <div class="code"><span style="color:#4b6485">// illustrative reference only</span><br><em>▶ 42</em>&nbsp; <span class="ed" contenteditable style="display:inline">fetch("/api/example")</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;…</div>
+      </div>
+    </div>
+
+    <div class="note mt">A risk indicator is a code pattern worth reviewing. It is not a confirmed vulnerability until verified.</div>
+  </div>
+</section>
+
+<!-- ===== Dashboard ===== -->
+<section id="dash">
+  <div class="w">
+    <div class="tag">Page 8 / 11</div>
+    <h2>Recon Dashboard &amp; PDF Reports</h2>
+
+    <div class="mock">
+      <div class="bar"><u></u><u></u><u></u>&nbsp; ReconFlow · Dashboard · illustrative mockup</div>
+      <div style="padding:16px" class="g g3">
+
+        <div class="card">
+          <h3>OSINT</h3>
+          <div class="ed" contenteditable>Public-source observations</div>
+          <div class="shot" style="min-height:60px;margin-top:8px">Reviewed records</div>
+        </div>
+        <div class="card">
+          <h3>Network</h3>
+          <div class="ed" contenteditable>In-scope asset overview</div>
+          <div class="shot" style="min-height:60px;margin-top:8px">Asset observations</div>
+        </div>
+        <div class="card">
+          <h3>Active Recon</h3>
+          <div class="ed" contenteditable>Authorized discovery summary</div>
+          <div class="shot" style="min-height:60px;margin-top:8px">Validated observations</div>
+        </div>
+        <div class="card">
+          <h3>Crawling</h3>
+          <div class="ed" contenteditable>Site structure overview</div>
+          <div class="shot" style="min-height:60px;margin-top:8px">Pages and references</div>
+        </div>
+        <div class="card">
+          <h3>JavaScript Analysis</h3>
+          <div class="ed" contenteditable>Code-analysis summary</div>
+          <div class="shot" style="min-height:60px;margin-top:8px">Review indicators</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="g g2 mt">
+      <div class="card">
+        <h3>Organized findings</h3>
+        <div class="ed big" contenteditable spellcheck="false">Group observations by asset and discovery stage. Preserve source, time, and confidence so analysts can trace each record, compare related results, and focus their review.</div>
+      </div>
+      <div class="card">
+        <h3>PDF export concept</h3>
+        <div class="g" style="grid-template-columns:90px 1fr;align-items:center">
+          <div class="shot" style="min-height:120px">PDF</div>
+          <div>
+            <div class="ed " contenteditable spellcheck="false">A concise, source-aware summary of in-scope assets and reviewed observations.</div><span class="fake" style="display:block;text-align:center;margin-top:8px;color:var(--cy)">⬇ Reconnaissance report preview</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Vulnerability Testing ===== -->
+<section id="test">
+  <div class="w">
+    <div class="tag">Page 9 / 11</div>
+    <h2>User-Selected Vulnerability Testing</h2>
+
+    <div class="g g2">
+      <div class="card">
+        <h3>Workflow</h3>
+        <div class="g">
+          <div class="step"><i>1</i>
+            <div class="ed" contenteditable>Review the discovered endpoint inventory</div>
+          </div>
+          <div class="step"><i>2</i>
+            <div class="ed" contenteditable>Select an endpoint that is explicitly in scope</div>
+          </div>
+          <div class="step"><i>3</i>
+            <div class="ed" contenteditable>Choose a relevant parameter, when applicable</div>
+          </div>
+          <div class="step"><i>4</i>
+            <div class="ed" contenteditable>Select an approved test category</div>
+          </div>
+          <div class="step"><i>5</i>
+            <div class="ed" contenteditable>Confirm authorization and start the controlled test</div>
+          </div>
+          <div class="step"><i>6</i>
+            <div class="ed" contenteditable>Record minimal evidence, outcome, and verification status</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock">
+        <div class="bar"><u></u><u></u><u></u>&nbsp; Test launcher · illustrative mockup</div>
+        <div style="padding:16px" class="g">
+
+          <div>
+            <div class="tag">Endpoint</div>
+            <div class="fake">Select an endpoint ▾</div>
+          </div>
+          <div>
+            <div class="tag">Parameter</div>
+            <div class="fake">Select a parameter ▾</div>
+          </div>
+          <div>
+            <div class="tag">Vulnerability type</div>
+            <div class="fake">Select a type ▾</div>
+          </div>
+
+          <div class="fake" style="text-align:center;background:var(--tl);color:#04202a;font-weight:700">Start test</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt">Vulnerability types</h3>
+    <div class="g g4">
+      <div class="card">
+        <h3>XSS</h3>
+        <div class="ed " contenteditable spellcheck="false">Review whether untrusted input is handled safely in the approved application.</div>
+        <div class="ed " contenteditable spellcheck="false">Only assess in-scope pages and parameters with explicit approval.</div>
+      </div>
+      <div class="card">
+        <h3>SQL Injection</h3>
+        <div class="ed " contenteditable spellcheck="false">Review how the application handles database-bound input; confirm any concern safely and with minimal impact.</div>
+        <div class="ed " contenteditable spellcheck="false">Requires an authorized application context and a relevant input path.</div>
+      </div>
+      <div class="card">
+        <h3>CSRF</h3>
+        <div class="ed " contenteditable spellcheck="false">Review whether state-changing actions are appropriately protected against unintended cross-site requests.</div>
+        <div class="ed " contenteditable spellcheck="false">Consider only approved actions in a controlled test account.</div>
+      </div>
+      <div class="card">
+        <h3>IDOR</h3>
+        <div class="ed " contenteditable spellcheck="false">Review whether access to an object is correctly limited to the authorized user.</div>
+        <div class="ed " contenteditable spellcheck="false">Use only designated test accounts and data approved for the assessment.</div>
+      </div>
+    </div>
+
+    <div class="note mt">Not every endpoint supports every vulnerability type.</div>
+  </div>
+</section>
+
+<!-- ===== Reports ===== -->
+<section id="reports">
+  <div class="w">
+    <div class="tag">Page 10 / 11</div>
+    <h2>Vulnerability Reports</h2>
+
+    <div class="g g2">
+      <div class="card">
+        <h3>Finding fields</h3>
+        <div class="row"><b>Vulnerability name</b>
+          <div class="ed " contenteditable spellcheck="false">Concise, verified finding title</div>
+        </div>
+        <div class="row"><b>Affected URL &amp; endpoint</b>
+          <div class="ed " contenteditable spellcheck="false">In-scope URL and affected route</div>
+        </div>
+        <div class="row"><b>HTTP method</b>
+          <div class="ed " contenteditable spellcheck="false">Observed request method</div>
+        </div>
+        <div class="row"><b>Vulnerable parameter</b>
+          <div class="ed " contenteditable spellcheck="false">Relevant parameter, if applicable</div>
+        </div>
+        <div class="row"><b>Severity</b>
+          <div class="ed " contenteditable spellcheck="false">Severity with a brief rationale</div>
+        </div>
+        <div class="row"><b>Technical evidence</b>
+          <div class="ed " contenteditable spellcheck="false">Minimal, sanitized verification evidence</div>
+        </div>
+        <div class="row"><b>Description</b>
+          <div class="ed " contenteditable spellcheck="false">Clear explanation of the verified behavior</div>
+        </div>
+        <div class="row"><b>Potential impact</b>
+          <div class="ed " contenteditable spellcheck="false">Realistic impact in the assessed environment</div>
+        </div>
+        <div class="row"><b>Recommended remediation</b>
+          <div class="ed " contenteditable spellcheck="false">Specific, practical steps to reduce the risk</div>
+        </div>
+        <div class="row"><b>Verification status</b>
+          <div class="ed " contenteditable spellcheck="false">Confirmed, potential, or not reproducible</div>
+        </div>
+      </div>
+
+      <div class="g">
+        <div class="mock">
+          <div class="bar">report.pdf · illustrative preview</div>
+          <div style="padding:18px">
+            <div class="ed" contenteditable style="font-size:20px;color:var(--tx)">Security Assessment Summary</div>
+            <div class="shot" style="margin-top:12px;min-height:220px">PDF report page preview</div>
+          </div>
+        </div>
+<span class="fake" style="text-align:center;color:var(--cy)">⬇ Download vulnerability report</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Conclusion ===== -->
+<section id="end">
+  <div class="w">
+    <div class="tag">Page 11 / 11</div>
+    <h2>Conclusion &amp; Future Scope</h2>
+
+    <div class="g g3">
+      <div class="card">
+        <h3>Project summary</h3>
+        <div class="ed big" contenteditable spellcheck="false">ReconFlow presents a structured approach to collecting, organizing, and reviewing information about approved digital assets. It connects reconnaissance stages with source-aware analysis and clear reporting while leaving security-test decisions with the authorized user.</div>
+      </div>
+      <div class="card">
+        <h3>Main benefits</h3>
+        <div class="ed big" contenteditable spellcheck="false">A unified view of assessment data; fewer duplicate records; clearer evidence trails; and a consistent path from discovery to analyst review.</div>
+      </div>
+      <div class="card">
+        <h3>Future improvements</h3>
+        <div class="ed big" contenteditable spellcheck="false">Potential next steps include integrations with approved data sources, configurable scope controls, richer evidence handling, and accessible export formats. Each addition should preserve authorization and human oversight.</div>
+      </div>
+    </div>
+
+    <div class="g g2 mt">
+      <div class="card">
+        <h3>Team members</h3>
+        <div class="ed " contenteditable spellcheck="false">Team member name · role</div>
+        <div class="ed " contenteditable spellcheck="false">Team member name · role</div>
+        <div class="ed " contenteditable spellcheck="false">Team member name · role</div>
+      </div>
+      <div class="card">
+        <h3>Contact information</h3>
+        <div class="ed " contenteditable spellcheck="false">Project contact email</div>
+        <div class="ed " contenteditable spellcheck="false">Project or portfolio link</div>
+        <div class="ed " contenteditable spellcheck="false">Project supervisor</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin:48px 0 0">
+      <h2 style="margin:0"><span class="ed" contenteditable style="display:inline;color:var(--cy)">Thank you</span></h2>
+      <div class="term">&gt; questions_</div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer>ReconFlow · Click any gray text to edit it · Edits are kept in this browser only</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
