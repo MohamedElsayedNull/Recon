@@ -384,7 +384,10 @@
     <div class="g g2">
       <div class="card">
         <h3>Explanation</h3>
-        <div class="ed big" contenteditable spellcheck="false">Active reconnaissance involves direct interaction with approved assets to confirm what is reachable and how it responds. ReconFlow separates network and web observations and keeps this stage within the written scope and agreed testing limits.</div>
+        <div class="ed big" contenteditable spellcheck="false">
+          <p>Active Reconnaissance is the process of collecting information about a target by directly interacting with its systems and services within an authorized scope. It helps identify reachable hosts, open ports, running services, and web server information.</p>
+          <p style="margin-bottom:0">ReconFlow combines Network and Web Reconnaissance under one Active Recon stage. Web Reconnaissance reviews HTTP/HTTPS services and their responses; Web Crawling remains a separate stage for mapping pages and references.</p>
+        </div>
       </div>
       <div class="card">
         <h3>How active discovery works</h3>
@@ -406,7 +409,16 @@
       <div class="card" style="border-color:var(--cy)">
         <div class="tag">Network assessment</div>
         <h3>Network Reconnaissance</h3>
-        <div class="ed big" contenteditable spellcheck="false">Build an inventory of in-scope network assets and review observed services at a high level. Coordinate timing and intensity with the system owner, and document any exclusions or operational limits.</div>
+        <div class="ed big" contenteditable spellcheck="false">
+          <p>Discover reachable hosts and review observed network services within the approved scope. Coordinate timing and intensity with the system owner, and document any exclusions or operational limits.</p>
+          <ul>
+            <li>Reachable hosts and IP addresses</li>
+            <li>Open ports</li>
+            <li>Running services</li>
+            <li>Service versions, when detectable</li>
+          </ul>
+          <p style="margin-bottom:0">Observed ports and services are inventory findings, not confirmed vulnerabilities.</p>
+        </div>
         <div class="g g3">
           <div class="card">
             <div class="tag">Review area</div>
@@ -422,32 +434,95 @@
           </div>
         </div>
         <div class="shot">
-          <div>▢ Sample results<br><span class="ed" contenteditable>Sanitized asset-inventory example from an authorized assessment</span></div>
         </div>
       </div>
 
       <div class="card" style="border-color:var(--tl)">
         <div class="tag">Web assessment</div>
         <h3>Web Reconnaissance</h3>
-        <div class="ed big" contenteditable spellcheck="false">Review approved web properties to map their public pages, routes, and response behavior. Keep collection proportional to the engagement scope and avoid actions that could affect availability or user data.</div>
+        <div class="ed big" contenteditable spellcheck="false">
+          <p>Review approved HTTP/HTTPS services and their responses. Keep collection proportional to the engagement scope and avoid actions that could affect availability or user data.</p>
+          <ul>
+            <li>HTTP/HTTPS responses and status codes</li>
+            <li>Web server information and response headers</li>
+            <li>Web technologies and available web services</li>
+            <li>Use ffuf within the authorized scope to discover potentially exposed directories and files for review.</li>
+          </ul>
+          <p style="margin-bottom:0">This service-level review is part of Active Recon; discovering pages, URLs, forms, and references belongs to the separate Web Crawling stage.</p>
+        </div>
         <div class="g g3">
           <div class="card">
             <div class="tag">Review area</div>
-            <div class="ed " contenteditable spellcheck="false">Page and route inventory</div>
-            <div class="ed " contenteditable spellcheck="false">Organize the publicly reachable pages and routes within the agreed scope.</div>
-            <div class="ed " contenteditable spellcheck="false">Keep a record of source and collection context.</div>
+            <div class="ed " contenteditable spellcheck="false">HTTP/HTTPS response details</div>
+            <div class="ed " contenteditable spellcheck="false">Review status codes, response headers, and web server information.</div>
+            <div class="ed " contenteditable spellcheck="false">Treat observed details as reconnaissance information for review.</div>
           </div>
           <div class="card">
             <div class="tag">Review area</div>
-            <div class="ed " contenteditable spellcheck="false">Response metadata</div>
-            <div class="ed " contenteditable spellcheck="false">Summarize relevant response details without collecting unnecessary user data.</div>
+            <div class="ed " contenteditable spellcheck="false">Technology and service identification</div>
+            <div class="ed " contenteditable spellcheck="false">Identify web technologies and available web services from their responses.</div>
             <div class="ed " contenteditable spellcheck="false">Confirm observations manually before drawing conclusions.</div>
           </div>
         </div>
         <div class="shot">
-          <div>▢ Sample results<br><span class="ed" contenteditable>Sanitized web-inventory example from an authorized assessment</span></div>
         </div>
       </div>
+    </div>
+
+    <div class="active-tools mt">
+      <style>
+        .active-tools h3.active-tools-title{margin-bottom:14px;color:var(--cy)}
+        .active-tools .active-tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+        .active-tools .active-tool-card{display:flex;flex-direction:column;min-width:0;padding:16px;background:#0b1220;border:1px solid #263449;border-radius:14px;color:#e2e8f0;box-shadow:0 6px 20px rgba(2,8,23,.16);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+        .active-tools .active-tool-card:hover{transform:translateY(-3px);border-color:#0891b2;box-shadow:0 10px 24px rgba(8,145,178,.18)}
+        .active-tools .active-tool-card h3{margin:0 0 8px;color:#67e8f9;font-size:13px}
+        .active-tools .active-tool-description{flex:1;margin:0 0 12px;color:#cbd5e1;font-size:14px;outline:none;border-radius:6px}
+        .active-tools .active-tool-description:hover{background:rgba(8,127,190,.05)}
+        .active-tools .active-tool-description:focus{background:rgba(8,127,190,.08);box-shadow:0 0 0 1px var(--cy);color:#e2e8f0}
+        .active-tools .active-tool-trigger{display:block;width:100%;margin:0;padding:8px;cursor:zoom-in;background:#111b2b;border:1px solid #334155;border-radius:10px}
+        .active-tools .active-tool-trigger img{display:block;width:100%;height:190px;object-fit:contain}
+        .active-tools .active-tool-caption{margin-top:8px;color:#94a3b8;font-size:12px;outline:none;border-radius:6px}
+        .active-tools .active-tool-caption:hover{background:rgba(8,127,190,.05)}
+        .active-tools .active-tool-caption:focus{background:rgba(8,127,190,.08);box-shadow:0 0 0 1px var(--cy);color:#e2e8f0}
+        .active-tools .active-lightbox{width:min(92vw,1100px);max-width:92vw;max-height:92vh;padding:14px;background:#0b1220;color:#e2e8f0;border:1px solid #334155;border-radius:12px}
+        .active-tools .active-lightbox::backdrop{background:rgba(2,8,23,.82)}
+        .active-tools .active-lightbox-close{display:block;margin:0 0 10px auto;padding:7px 12px;color:#e2e8f0;background:#172337;border:1px solid #475569;border-radius:7px;cursor:pointer}
+        .active-tools .active-lightbox img{display:block;width:100%;height:min(78vh,760px);object-fit:contain}
+        @media(max-width:900px){.active-tools .active-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:540px){.active-tools .active-tool-grid{grid-template-columns:1fr}}
+        @media(prefers-reduced-motion:reduce){.active-tools .active-tool-card{transition:none}}
+      </style>
+      <h3 class="active-tools-title">Active Recon Tools</h3>
+      <div class="active-tool-grid">
+        <article class="active-tool-card">
+          <h3 contenteditable spellcheck="false">Nmap</h3>
+          <p class="active-tool-description" contenteditable spellcheck="false">Nmap is a network discovery and security auditing tool used to identify reachable hosts, open ports, and running services. It helps understand the exposed network services of a target.</p>
+          <button class="active-tool-trigger" type="button" aria-label="Open Nmap image in lightbox" onclick="const d=this.closest('.active-tools').querySelector('.active-lightbox');const i=this.querySelector('img');d.querySelector('img').src=i.src;d.querySelector('img').alt=i.alt;d.showModal()">
+            <img src="image/nmap.png" alt="Nmap network discovery interface" loading="lazy">
+          </button>
+          <div class="active-tool-caption" contenteditable spellcheck="false">Network discovery interface</div>
+        </article>
+        <article class="active-tool-card">
+          <h3 contenteditable spellcheck="false">DNSRecon</h3>
+          <p class="active-tool-description" contenteditable spellcheck="false">DNSRecon is a DNS enumeration tool used to collect DNS-related information, including DNS records and other publicly accessible DNS details. It helps map the target's DNS infrastructure.</p>
+          <button class="active-tool-trigger" type="button" aria-label="Open DNSRecon image in lightbox" onclick="const d=this.closest('.active-tools').querySelector('.active-lightbox');const i=this.querySelector('img');d.querySelector('img').src=i.src;d.querySelector('img').alt=i.alt;d.showModal()">
+            <img src="image/dnsrecon.png" alt="DNSRecon DNS enumeration interface" loading="lazy">
+          </button>
+          <div class="active-tool-caption" contenteditable spellcheck="false">DNS enumeration interface</div>
+        </article>
+        <article class="active-tool-card">
+          <h3 contenteditable spellcheck="false">HTTPX</h3>
+          <p class="active-tool-description" contenteditable spellcheck="false">HTTPX is a fast HTTP probing toolkit used to identify active web services and collect information such as HTTP status codes, page titles, web server details, and response technologies.</p>
+          <button class="active-tool-trigger" type="button" aria-label="Open HTTPX image in lightbox" onclick="const d=this.closest('.active-tools').querySelector('.active-lightbox');const i=this.querySelector('img');d.querySelector('img').src=i.src;d.querySelector('img').alt=i.alt;d.showModal()">
+            <img src="image/httpx.png" alt="HTTPX web service probing interface" loading="lazy">
+          </button>
+          <div class="active-tool-caption" contenteditable spellcheck="false">HTTP service probing interface</div>
+        </article>
+      </div>
+      <dialog class="active-lightbox" aria-label="Active Recon tool image preview">
+        <button class="active-lightbox-close" type="button" onclick="this.closest('dialog').close()">Close</button>
+        <img alt="">
+      </dialog>
     </div>
   </div>
 </section>
@@ -480,6 +555,23 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="active-tools mt">
+      <div class="active-tool-grid" style="grid-template-columns:minmax(0,1fr);max-width:640px">
+        <article class="active-tool-card">
+          <h3 contenteditable spellcheck="false">Web Crawling</h3>
+          <p class="active-tool-description" contenteditable spellcheck="false">A web crawler follows links to discover in-scope website pages and references while respecting the approved boundary and collection limits.</p>
+          <button class="active-tool-trigger" type="button" aria-label="Open Web Crawling image in lightbox" onclick="const d=this.closest('.active-tools').querySelector('.active-lightbox');const i=this.querySelector('img');d.querySelector('img').src=i.src;d.querySelector('img').alt=i.alt;d.showModal()">
+            <img src="image/webcrawling.png" alt="Web Crawling automated website discovery interface" loading="lazy">
+          </button>
+          <div class="active-tool-caption" contenteditable spellcheck="false">Web Crawling – Automated Website Discovery</div>
+        </article>
+      </div>
+      <dialog class="active-lightbox" aria-label="Web Crawling image preview">
+        <button class="active-lightbox-close" type="button" onclick="this.closest('dialog').close()">Close</button>
+        <img alt="">
+      </dialog>
     </div>
 
     <div class="card mt">
@@ -529,10 +621,6 @@
         <div class="ed " contenteditable spellcheck="false">Present discovered URLs and references with useful context.</div>
         <div class="ed " contenteditable spellcheck="false">Verify representative results before reporting.</div>
       </div>
-    </div>
-    <h3 class="mt">Results preview</h3>
-    <div class="shot">
-      <div>▢ Results preview<br><span class="ed" contenteditable>Sanitized page and link inventory from an authorized assessment</span></div>
     </div>
   </div>
 </section>
@@ -688,11 +776,6 @@
           <h3>OSINT</h3>
           <div class="ed" contenteditable>Public-source observations</div>
           <div class="shot" style="min-height:60px;margin-top:8px">Reviewed records</div>
-        </div>
-        <div class="card">
-          <h3>Network</h3>
-          <div class="ed" contenteditable>In-scope asset overview</div>
-          <div class="shot" style="min-height:60px;margin-top:8px">Asset observations</div>
         </div>
         <div class="card">
           <h3>Active Recon</h3>
@@ -884,21 +967,6 @@
       <div class="card">
         <h3>Future improvements</h3>
         <div class="ed big" contenteditable spellcheck="false">Potential next steps include integrations with approved data sources, configurable scope controls, richer evidence handling, and accessible export formats. Each addition should preserve authorization and human oversight.</div>
-      </div>
-    </div>
-
-    <div class="g g2 mt">
-      <div class="card">
-        <h3>Team members</h3>
-        <div class="ed " contenteditable spellcheck="false">Team member name · role</div>
-        <div class="ed " contenteditable spellcheck="false">Team member name · role</div>
-        <div class="ed " contenteditable spellcheck="false">Team member name · role</div>
-      </div>
-      <div class="card">
-        <h3>Contact information</h3>
-        <div class="ed " contenteditable spellcheck="false">Project contact email</div>
-        <div class="ed " contenteditable spellcheck="false">Project or portfolio link</div>
-        <div class="ed " contenteditable spellcheck="false">Project supervisor</div>
       </div>
     </div>
 
